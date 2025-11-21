@@ -102,7 +102,7 @@ st.markdown(
 
 # Banner
 try:
-    img = Image.open("Banner.png")
+    img = Image.open("Banner.PNG")
     img = img.resize((img.width, 350))
     st.image(img, use_container_width=True)
 except Exception as e:
