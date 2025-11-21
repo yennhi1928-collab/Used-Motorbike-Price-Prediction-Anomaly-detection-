@@ -670,14 +670,14 @@ elif choice.startswith("3."):
                 "Mileage (so_km_da_di)",
                 min_value=0, value=30000, step=1000
             )
-            khoang_gia_min = st.number_input(
-                "Minimum price range (khoang_gia_min) - triệu VND (0 is valid)",
-                min_value=0.0, value=0.0
-            )
-            khoang_gia_max = st.number_input(
-                "Maximum price range (khoang_gia_max) - triệu VND (0 is valid)",
-                min_value=0.0, value=0.0
-            )
+            # khoang_gia_min = st.number_input(
+            #     "Minimum price range (khoang_gia_min) - triệu VND (0 is valid)",
+            #     min_value=0.0, value=0.0
+            # )
+            # khoang_gia_max = st.number_input(
+            #     "Maximum price range (khoang_gia_max) - triệu VND (0 is valid)",
+            #     min_value=0.0, value=0.0
+            # )
 
         # Chuẩn bị 1 dòng input theo các cột X đã dùng khi train
         sample = {}
@@ -698,10 +698,6 @@ elif choice.startswith("3."):
                 sample[c] = tuoi_xe
             elif c == 'so_km_da_di':
                 sample[c] = so_km_da_di
-            elif c == 'khoang_gia_min':
-                sample[c] = khoang_gia_min if khoang_gia_min > 0 else np.nan
-            elif c == 'khoang_gia_max':
-                sample[c] = khoang_gia_max if khoang_gia_max > 0 else np.nan
             else:
                 # với các cột khác, để NaN cho pipeline xử lý
                 sample[c] = np.nan
