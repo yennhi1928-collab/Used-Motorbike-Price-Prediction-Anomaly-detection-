@@ -706,7 +706,7 @@ elif choice.startswith("3."):
 
         st.markdown("##### 📥 Input data")
         # Ẩn cột phan_khuc khi HIỂN THỊ (nếu có) nhưng hiện tại đã không còn trong mô hình
-        st.dataframe(input_df.drop(columns=['phan_khuc'], errors='ignore'))
+        st.dataframe(input_df.drop(columns=['phan_khuc', 'khoang_gia_min', 'khoang_gia_max'], errors='ignore'))
 
         if st.button("Predicted Price"):
             try:
